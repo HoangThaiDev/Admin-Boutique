@@ -12,6 +12,9 @@ function App() {
         const res = await axios.get(`${API_ROOT}/shop/products`, {
           proxy: 1,
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
 
         if (res.statusText === "OK") {
