@@ -6,6 +6,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
 
+  console.log(API_ROOT);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -19,6 +21,7 @@ function App() {
 
         if (res.statusText === "OK") {
           const products = res.data;
+          console.log(products);
 
           setProducts(products);
           setIsLoading(true);
