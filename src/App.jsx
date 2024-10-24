@@ -12,14 +12,13 @@ function App() {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(`${API_ROOT}/shop/products`, {
-          proxy: 1,
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
           },
         });
 
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           const products = res.data;
           console.log(products);
 
