@@ -16,6 +16,7 @@ function App() {
           headers: {
             "Content-Type": "application/json",
           },
+          proxy: 1,
         });
 
         if (res.status === 200) {
