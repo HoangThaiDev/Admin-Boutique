@@ -1,5 +1,4 @@
 import env from "./enviroment";
-console.log(env);
 
 let apiRootServer = "";
 

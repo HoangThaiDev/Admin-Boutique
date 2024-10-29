@@ -1,0 +1,47 @@
+.loading__card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: rgb(38, 70, 83);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fade-loading {
+    margin-bottom: 20px;
+}
+
+.loading__card>h1 {
+    font: 500 2.5rem/2.5rem "Lora", serif;
+}
+
+@media screen and (max-width:575px) {
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+    .loading__card>h1 {
+        font-size: 2rem;
+    }
+}

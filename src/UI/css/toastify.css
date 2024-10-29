@@ -1,0 +1,91 @@
+/* CSS: Toastify */
+
+
+/* ------------------------- Page Register ----------------------------- */
+.toast-register-success,
+.toast-register-error {
+    width: 100%;
+}
+
+.toast-body-register>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}
+
+/* ------------------------- Page Login ----------------------------- */
+.toast-login-success,
+.toast-login-error {
+    width: 100%;
+}
+
+.toast-body-login>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}
+
+/* ------------------------- Page Home ----------------------------- */
+.toast-home-container {
+    top: 100px;
+}
+
+.toast-home-success,
+.toast-home-error {
+    width: 100%;
+}
+
+.toast-body-home>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}
+
+/* ------------------------- Page Cart ----------------------------- */
+.toast-cart-container {
+    top: 100px;
+}
+
+.toast-cart-success,
+.toast-cart-error {
+    width: 100%;
+}
+
+.toast-body-cart>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}
+
+
+/* ------------------------- Page Product Detail ----------------------------- */
+.toast-product-detail-container {
+    top: 100px;
+}
+
+.toast-product-detail-success,
+.toast-product-detail-error {
+    width: 100%;
+}
+
+.toast-body-product-detail>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}
+
+/* ------------------------- Page Checkout ----------------------------- */
+.toast-checkout-container {
+    top: 100px;
+}
+
+.toast-checkout-success,
+.toast-checkout-error {
+    width: 100%;
+}
+
+.toast-body-checkout>div:last-child {
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(56, 56, 55);
+}

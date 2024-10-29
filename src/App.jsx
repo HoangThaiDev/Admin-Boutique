@@ -1,53 +1,83 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { API_ROOT } from "./utils/constants";
+// Import Modules
+import { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import APIServer from "./API/customAPI";
+import { actionUser } from "./redux/actionRedux";
+
+// Import Components
+// ------------ Layout --------------
+const RootLayout = lazy(() => import("./layout/RootLayout"));
+
+// ------------ Pages --------------
+const Login = lazy(() => import("./page/Login"));
+const Register = lazy(() => import("./page/Register"));
+const Dashboard = lazy(() => import("./page/Dashboard"));
+
+// ------------ Components --------------
+const Loading = lazy(() => import("./UI/Loading"));
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [products, setProducts] = useState([]);
+  // Create + use Hooks
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
 
-  console.log(API_ROOT);
+  // // Create + use variables
+  const pathsAuth = ["/login", "/signup"];
 
+  // Sides Effect
   useEffect(() => {
-    const fetchProduct = async () => {
+    const fetchUser = async () => {
       try {
-        const res = await axios.get(`${API_ROOT}/shop/products`, {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "application/json",
-          },
-          proxy: 1,
-        });
+        const res = await APIServer.admin.getAdmin();
+        const { isLoggedIn, accessToken } = res.data;
 
-        if (res.status === 200) {
-          const products = res.data;
-          console.log(products);
+        // If client not logged in => keep going
+        if (res.status === 200 && !isLoggedIn) return;
 
-          setProducts(products);
-          setIsLoading(true);
+        // If client was logged in and lost accessToken => update new accessToken
+        if (res.status === 201 && isLoggedIn) {
+          return dispatch(
+            actionUser.save({
+              accessToken: accessToken,
+              isLoggedIn: isLoggedIn,
+            })
+          );
         }
       } catch (error) {
-        console.log("API Context Error:", error);
-        setIsLoading(false);
+        const { data, status } = error.response;
+
+        if (status === 500) {
+          alert(data.message);
+          return false;
+        }
+
+        if (status === 401) {
+          return dispatch(
+            actionUser.save({ accessToken: "", isLoggedIn: data.isLoggedIn })
+          );
+        }
       }
     };
-    fetchProduct();
+
+    // Check path not in Page Login & Register
+    if (!pathsAuth.includes(location.pathname)) {
+      fetchUser();
+    }
   }, []);
   return (
     <div className="App">
-      <h1>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, est.
-        Cupiditate a atque laboriosam ab praesentium nostrum molestias,
-        similique sed architecto repellat minima consectetur quo accusantium
-        perspiciatis unde quae deleniti.
-      </h1>
-      {isLoading && (
-        <div>
-          {products.map((p) => (
-            <img src={p.images[0]} alt="" key={p._id} />
-          ))}
-        </div>
-      )}
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
+
+          <Route path="/dashboard" element={<RootLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </div>
   );
 }

@@ -1,0 +1,175 @@
+.nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* CSS: Nav Container */
+.nav-container {
+    padding: 0 20px;
+    background-color: red;
+}
+
+/* CSS: Nav Row */
+.nav-row {
+    display: flex;
+    height: 60px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CSS: Nav Col */
+.nav-col {
+    flex: 1;
+}
+
+/* CSS: Nav Col Left */
+.nav-logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 15px;
+}
+
+.nav-logo .logo-name,
+.nav-logo .logo-name>span {
+    font: 600 2.0rem/2.0rem"Bodoni Moda", serif;
+    color: rgb(43, 64, 86);
+}
+
+.nav-logo .logo-name>span {
+    color: #fff;
+    background-color: rgb(43, 64, 86);
+    padding: 2px 5px;
+    margin-right: 1px;
+}
+
+/* CSS: Nav Col Right */
+.nav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 15px;
+}
+
+.nav-user-auth {
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-user-auth .user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #EEEEEE;
+    border-radius: 100%;
+    object-fit: cover;
+    padding: 4px;
+}
+
+.nav-user-auth .user-online-status {
+    background: #3cb878;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    height: 8px;
+    border: 2px solid #fff;
+    position: absolute;
+    width: 8px;
+}
+
+.menu-user-dropdown {
+    position: absolute;
+    z-index: 2;
+    left: -130px;
+    bottom: -180px;
+    width: 160px;
+    background-color: #fff;
+    box-shadow: 0 8px 10px 2px rgba(181, 181, 181, .6);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.menu-user-dropdown.active {
+    visibility: initial;
+    opacity: 1;
+}
+
+.menu-user-dropdown::after {
+    content: '';
+    position: absolute;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: -8px;
+    right: 0;
+}
+
+.menu-user-dropdown>li {
+    display: flex;
+    gap: 0 5px;
+    align-items: flex-end;
+    padding: 5px 20px;
+
+}
+
+.menu-user-dropdown>li.divider {
+    background-color: rgba(95, 95, 95, .2);
+    height: 1px;
+    padding: 1px;
+}
+
+.menu-user-dropdown>li:nth-child(4) {
+    margin-bottom: 5px;
+}
+
+.menu-user-dropdown>li:last-child {
+    margin-top: 5px;
+}
+
+.menu-user-dropdown>li>span {
+    font: 500 1.4rem/1.4rem "EB Garamond", serif;
+    color: rgb(51, 51, 51);
+    letter-spacing: .4px;
+}
+
+/* CSS: Icons */
+.icon {
+    cursor: pointer;
+    font-size: 2.4rem;
+}
+
+.icon-menu {
+    color: rgb(95, 95, 95);
+}
+
+.icon-search {
+    color: #3D9FFF;
+}
+
+.icon-setting {
+    color: #A9A9A9;
+}
+
+.icon-noti {
+    color: #D32F2F;
+}
+
+.icon-menu-dropdown {
+    font-size: 1.4rem;
+    color: rgb(51, 51, 51);
+}
+
+/* CSS: Active */
+
+/* CSS: Effects */
+.menu-user-dropdown>li:hover {
+    background-color: rgba(181, 181, 181, .4);
+}

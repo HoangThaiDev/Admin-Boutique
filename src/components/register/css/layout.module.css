@@ -1,0 +1,59 @@
+.register {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    box-sizing: content-box;
+    overflow: hidden;
+    background-color: #F4F5F9;
+}
+
+.register-background {
+    position: relative;
+    left: 100px;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+/* CSS: Register Container */
+.register-container {
+    width: 900px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/* CSS: Register Banner */
+.register-banner {
+    position: relative;
+    width: 50%;
+}
+
+.register-banner>img {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* CSS: Register Form */
+.register-form {
+    box-sizing: border-box;
+    width: 45%;
+    box-shadow:
+        -4px -4px 1px 1px rgba(244, 245, 249, 1),
+        4px 4px 1px 1px rgba(244, 245, 249, 1);
+    padding: 30px;
+    border-radius: 8px;
+}
