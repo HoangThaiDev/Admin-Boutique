@@ -1,5 +1,9 @@
 // Import Modules
 import React, { useState } from "react";
+import APIServer from "../API/customAPI";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { actionSidebar } from "../redux/actionRedux";
 
 // Import File CSS
 import classes from "./css/navigation.module.css";
@@ -18,6 +22,9 @@ import { AiOutlineLogout } from "react-icons/ai";
 import avatar from "../assets/images/avatar.svg";
 
 export default function Navigation() {
+  // Create + use Hooks
+  const navigation = useNavigate();
+  const dispatch = useDispatch();
   // Create + use States
   const [isShowMenuUserDd, setIsShowMenuUserDd] = useState(false);
 
@@ -25,6 +32,31 @@ export default function Navigation() {
   const showMenuUserDdHandle = () => {
     setIsShowMenuUserDd(!isShowMenuUserDd);
   };
+
+  const logoutHandle = async () => {
+    try {
+      const res = await APIServer.admin.getLogout();
+
+      if (res.status === 200) {
+        const { message } = res.data;
+        alert(message);
+        navigation("..");
+      }
+    } catch (error) {
+      console.log(error);
+      const { data } = error.response;
+      alert(data);
+    }
+  };
+
+  const goHomeHandle = () => {
+    navigation("../dashboard");
+  };
+
+  const toggleSidebarHandle = () => {
+    dispatch(actionSidebar.toggle());
+  };
+
   return (
     <div className={classes["nav"]}>
       <div className={classes["nav-container"]}>
@@ -34,8 +66,9 @@ export default function Navigation() {
             <div className={classes["nav-logo"]}>
               <IoMenu
                 className={`${classes["icon"]} ${classes["icon-menu"]}`}
+                onClick={toggleSidebarHandle}
               />
-              <h1 className={classes["logo-name"]}>
+              <h1 className={classes["logo-name"]} onClick={goHomeHandle}>
                 <span>B</span>outique
               </h1>
             </div>
@@ -98,7 +131,7 @@ export default function Navigation() {
                     <span>Settings</span>
                   </li>
                   <li className={classes["divider"]}></li>
-                  <li>
+                  <li onClick={logoutHandle}>
                     <AiOutlineLogout
                       className={`${classes["icon-menu-dropdown"]} ${classes["icon-logout-dropdown"]}`}
                     />

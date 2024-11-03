@@ -1,0 +1,105 @@
+.modal-form-product-container {
+    background-color: #F9FBFD;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 900px;
+    box-shadow: 0 0 20px 1px rgba(91, 90, 90, .4);
+    display: none;
+}
+
+/* CSS: Active */
+.modal-form-product-container.active {
+    display: block;
+}
+
+.form-product {
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+}
+
+.form-input.name,
+.form-input.category,
+.form-input.price,
+.form-input.quantity {
+    width: 48%;
+}
+
+.form-input>label {
+    font: 500 1.4rem/1.4rem "Roboto", sans-serif;
+    color: #48494a;
+}
+
+.form-input>input,
+.form-input>textarea {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    border: 1px solid #dcdee0;
+    padding: 8px 15px;
+    box-sizing: border-box;
+    color: rgb(50, 50, 50);
+    resize: none;
+    border-radius: 3px;
+}
+
+.form-input>input::placeholder,
+.form-input>textarea::placeholder {
+    font: 500 1.4rem/1.4rem "Roboto", sans-serif;
+    color: #c0c2c4;
+
+}
+
+.form-product>button {
+    cursor: pointer;
+    font: 500 1.4rem/1.4rem "Roboto", sans-serif;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 10px 20px;
+    transition: all .5s ease;
+}
+
+.btn-submit {
+    background-color: #5F76E8;
+    color: #fff;
+}
+
+.btn-cancel {
+    background-color: #e1664a;
+    color: #fff;
+}
+
+.form-input>input[type="number"]::-webkit-inner-spin-button,
+.form-input>input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-input .input-error {
+    border-color: #d13d1c;
+}
+
+/* CSS: Effects */
+.form-input>input:focus,
+.form-input>textarea:focus {
+    outline: none;
+    border-color: rgb(102, 101, 101);
+}
+
+.btn-submit:hover {
+    background-color: #2e43ad;
+}
+
+
+.btn-cancel:hover {
+    background-color: #d13d1c;
+}

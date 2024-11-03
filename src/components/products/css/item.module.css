@@ -1,0 +1,101 @@
+/* CSS: Product Item */
+.product-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+    background-color: #fff;
+}
+
+.product-item:nth-child(2n+1) {
+    border-top: none;
+    background-color: #F4F8FB;
+}
+
+.product-item .bg-content {
+    flex: 1;
+    padding: 10px 15px;
+    align-self: stretch;
+    border-right: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content:first-child {
+    border-left: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content:last-child {
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content.id,
+.product-item .bg-content.name {
+    flex: 2;
+}
+
+.product-item .bg-content.category {
+    flex: .5;
+}
+
+.product-item .bg-content>p {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.product-item .bg-content.price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0 5px;
+}
+
+.product-item .bg-content.price>span {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+    flex: 1;
+}
+
+.product-item .bg-content.image {
+    text-align: center;
+}
+
+.product-item .bg-content.image>img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.product-item .bg-content.edit {
+    justify-self: flex-start;
+}
+
+.product-item .bg-content.edit>button {
+    cursor: pointer;
+    font: 500 1.3rem/2.0rem "Roboto", sans-serif;
+    margin: 0 5px;
+    padding: 4px 8px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all .5s ease;
+}
+
+.product-item .bg-content.edit .btn-update {
+    background-color: #22CA80;
+}
+
+.product-item .bg-content.edit .btn-delete {
+    background-color: #FF4F70;
+}
+
+/* CSS: Effects */
+.product-item .bg-content.edit .btn-update:hover {
+    background-color: #209d67;
+}
+
+.product-item .bg-content.edit .btn-delete:hover {
+    background-color: #ac3147;
+}

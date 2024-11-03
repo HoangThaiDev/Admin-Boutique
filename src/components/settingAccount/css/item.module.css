@@ -1,0 +1,95 @@
+/* CSS: Product Item */
+.product-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+    background-color: #fff;
+}
+
+.product-item:nth-child(2n+1) {
+    border-top: none;
+    background-color: #F4F8FB;
+}
+
+.product-item .bg-content {
+    flex: 1;
+    padding: 10px 15px;
+    align-self: stretch;
+    border-right: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content:first-child {
+    border-left: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content:last-child {
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.product-item .bg-content.id {
+    flex: 1.5;
+}
+
+.product-item .bg-content.role,
+.product-item .bg-content.phone,
+.product-item .bg-content.state,
+.product-item .bg-content.update {
+    flex: .7;
+}
+
+.product-item .bg-content>p {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.product-item .bg-content.role>select {
+    border-radius: 0;
+    padding: 5px;
+    border: 1px solid rgba(216, 231, 236, 1);
+}
+
+.product-item .bg-content.update>button {
+    cursor: pointer;
+    font: 500 1.3rem/2.0rem "Roboto", sans-serif;
+    margin: 0 5px;
+    padding: 5px 20px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all .5s ease;
+}
+
+.product-item .bg-content.update .btn-delete {
+    background-color: #df471d;
+}
+
+.product-item .bg-content.state>p {
+    font: 500 1.3rem/2.0rem "Roboto", sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+}
+
+/* CSS: Actives */
+.state-logged-in {
+    background-color: #109f45;
+}
+
+.state-logged-out {
+    background-color: #df471d;
+}
+
+/* CSS: Effects */
+.product-item .bg-content.update .btn-delete:hover {
+    background-color: #ec3f0f;
+}
+
+.product-item .bg-content.role>select:focus {
+    outline: none;
+    border-color: rgba(98, 97, 97, 1);
+}

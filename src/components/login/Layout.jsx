@@ -1,5 +1,5 @@
 // Import Modules
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { toast } from "react-toastify";
 
 // Import File CSS
@@ -28,6 +28,7 @@ export default function Layout() {
       className: "toast-login-error",
     });
   }, []);
+
   return (
     <div className={classes["login"]}>
       <Toastify bodyClassName="toast-body-login" position="top-right" />

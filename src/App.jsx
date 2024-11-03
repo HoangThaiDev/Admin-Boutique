@@ -13,9 +13,15 @@ const RootLayout = lazy(() => import("./layout/RootLayout"));
 const Login = lazy(() => import("./page/Login"));
 const Register = lazy(() => import("./page/Register"));
 const Dashboard = lazy(() => import("./page/Dashboard"));
+const Orders = lazy(() => import("./page/Orders"));
+const Products = lazy(() => import("./page/Products"));
+const SettingAccount = lazy(() => import("./page/SettingAccount"));
+const Permission = lazy(() => import("./page/Permission"));
 
 // ------------ Components --------------
 const Loading = lazy(() => import("./UI/Loading"));
+const ModalFormProduct = lazy(() => import("./UI/ModalFormProduct"));
+const ModalCheckout = lazy(() => import("./UI/ModalCheckout"));
 
 function App() {
   // Create + use Hooks
@@ -33,8 +39,8 @@ function App() {
         const res = await APIServer.admin.getAdmin();
         const { isLoggedIn, accessToken } = res.data;
 
-        // If client not logged in => keep going
-        if (res.status === 200 && !isLoggedIn) return;
+        // If client not logged in => Back to page login
+        if (res.status === 200 && !isLoggedIn) return navigate("..");
 
         // If client was logged in and lost accessToken => update new accessToken
         if (res.status === 201 && isLoggedIn) {
@@ -53,7 +59,15 @@ function App() {
           return false;
         }
 
+        if (status === 400) {
+          alert(data.message);
+          navigate("..");
+          return false;
+        }
+
         if (status === 401) {
+          alert(data.message);
+          navigate("..");
           return dispatch(
             actionUser.save({ accessToken: "", isLoggedIn: data.isLoggedIn })
           );
@@ -66,15 +80,25 @@ function App() {
       fetchUser();
     }
   }, []);
+
   return (
     <div className="App">
       <Suspense fallback={<Loading />}>
+        <ModalFormProduct />
+        <ModalCheckout />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Register />} />
 
           <Route path="/dashboard" element={<RootLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="products" element={<Products />} />
+            <Route path="history" element={<History />} />
+          </Route>
+          <Route path="/admin" element={<RootLayout />}>
+            <Route path="permission" element={<Permission />} />
+            <Route path="setting-accounts" element={<SettingAccount />} />
           </Route>
         </Routes>
       </Suspense>

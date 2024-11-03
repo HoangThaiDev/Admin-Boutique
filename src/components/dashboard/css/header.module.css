@@ -1,0 +1,119 @@
+.header {
+    box-sizing: border-box;
+}
+
+/* CSS: Header Container */
+.header-container {
+    padding: 20px;
+}
+
+/* CSS: Header Message */
+.header-message {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px 0;
+    margin-bottom: 20px;
+}
+
+.header-message>h3 {
+    font: 600 1.8rem/2.2rem "Roboto", sans-serif;
+    color: rgb(50, 50, 50);
+    letter-spacing: .4px;
+}
+
+.header-message>p {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    color: rgb(144, 144, 144);
+    letter-spacing: .4px;
+}
+
+/* CSS: Header Row */
+.header-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 3px;
+}
+
+/* CSS: Header Col */
+.header-col {
+    position: relative;
+    width: 21%;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 1px rgba(218, 219, 219, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    border-radius: 5px;
+    transition: .5s all ease;
+}
+
+.info-value {
+    width: 70%;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.info-value>p {
+    position: relative;
+    display: inline-block;
+    font: 600 2.2rem/2.4rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(50, 50, 50);
+    margin-bottom: 5px;
+    padding-right: 35px;
+
+}
+
+.info-value>span {
+    display: block;
+    font: 500 1.4rem/1.6rem "Roboto", sans-serif;
+    letter-spacing: .4px;
+    color: rgb(194, 198, 209);
+}
+
+/* CSS: Actives */
+.info-value-prices>p::after,
+.info-value-balance>p::after {
+    content: 'VND';
+    position: absolute;
+    font: 600 1.4rem/1.6rem "Roboto", sans-serif;
+    right: 0px;
+}
+
+/* CSS: Icons */
+.icon {
+    font-size: 1.8rem;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+.icon-new-client {
+    background-color: #FEF4E4;
+    color: #b08643;
+}
+
+.icon-price {
+    background-color: #DAF4F0;
+    color: #337d72;
+}
+
+.icon-order {
+    background-color: #DFF0FA;
+    color: #537894;
+}
+
+.icon-balance {
+    background-color: #E2E5ED;
+    color: #5e667f;
+}
+
+/* CSS: Effects */
+.header-col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px 2px rgba(185, 187, 187, 0.6);
+}

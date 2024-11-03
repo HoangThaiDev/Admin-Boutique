@@ -1,6 +1,19 @@
 // Import Modules
-import { userSlice } from "./sliceRedux";
+import {
+  userSlice,
+  sidebarSlice,
+  modalFormProductSlice,
+  modalCheckoutSlice,
+} from "./sliceRedux";
 
 const actionUser = userSlice.actions;
+const actionSidebar = sidebarSlice.actions;
+const actionModalFormProduct = modalFormProductSlice.actions;
+const actionModalCheckout = modalCheckoutSlice.actions;
 
-export { actionUser };
+export {
+  actionUser,
+  actionSidebar,
+  actionModalFormProduct,
+  actionModalCheckout,
+};

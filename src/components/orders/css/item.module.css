@@ -1,0 +1,61 @@
+/* CSS: Product Item */
+.order-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+    background-color: #fff;
+}
+
+.order-item:nth-child(2n+1) {
+    border-top: none;
+    background-color: #F4F8FB;
+}
+
+.order-item .bg-content {
+    flex: 1;
+    padding: 10px 15px;
+    align-self: stretch;
+    border-right: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.order-item .bg-content:first-child {
+    border-left: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.order-item .bg-content:last-child {
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.order-item .bg-content.order-id {
+    flex: 1.5;
+}
+
+.order-item .bg-content.detail {
+    flex: .5;
+}
+
+.order-item .bg-content>p {
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.order-item .bg-content.detail .btn-view {
+    cursor: pointer;
+    font: 500 1.4rem/2.0rem "Roboto", sans-serif;
+    background-color: #22CA80;
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 15px;
+    transition: all .5s ease;
+}
+
+/* CSS: Effects */
+.order-item .bg-content.detail .btn-view:hover {
+    background-color: #209d67;
+}

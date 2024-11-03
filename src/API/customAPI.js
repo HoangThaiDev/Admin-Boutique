@@ -6,27 +6,41 @@ const APIServer = {
     getProducts: () => {
       return axiosIntance.get(`shop/products`);
     },
-    // getProductsByQuery: (query) => {
-    //   if (!query) {
-    //     query = "?category=all";
-    //   }
 
-    //   return axiosIntance.get(`shop/products/query${query}`);
-    // },
-    // getProductDetail: (productId) => {
-    //   return axiosIntance.get(`shop/product/${productId}`);
-    // },
+    getProductsByPage: (page) => {
+      return axiosIntance.get(`shop/products/page?page=${page}`);
+    },
 
-    // postAddToCart: (valueProduct) => {
-    //   return axiosIntance.post("shop/products/add-to-cart", {
-    //     valueProduct,
-    //   });
-    // },
+    addProduct: (product) => {
+      return axiosIntance.post(`shop/product/add`, product, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    },
+
+    updateProduct: (product) => {
+      return axiosIntance.post(`shop/product/update`, product, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    },
+
+    deleteProduct: (productId) => {
+      return axiosIntance.delete(`shop/product/${productId}`);
+    },
+  },
+  checkout: {
+    getCheckouts: () => {
+      return axiosIntance.get("checkout/checkouts");
+    },
+    getCheckoutsByPage: (page) => {
+      return axiosIntance.get(`checkout/checkouts/page?page=${page}`);
+    },
   },
   admin: {
     postSignUpAdmin: (formValues) => {
-      console.log(formValues);
-
       return axiosIntance.post("admin/sign-up", formValues);
     },
     postLoginAdmin: (formValues) => {
@@ -35,8 +49,20 @@ const APIServer = {
     getAdmin: () => {
       return axiosIntance.get("admin");
     },
+    getAdmins: () => {
+      return axiosIntance.get("admin/admins");
+    },
     getLogout: () => {
       return axiosIntance.get("admin/logout");
+    },
+    getAdminsByPage: (page) => {
+      return axiosIntance.get(`admin/admins/page?page=${page}`);
+    },
+    postUpdateAdmin: (valuesAdmin) => {
+      return axiosIntance.post("admin/update", valuesAdmin);
+    },
+    deleteAdmin: (adminId) => {
+      return axiosIntance.delete(`admin/delete/${adminId}`);
     },
   },
 };

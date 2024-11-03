@@ -38,11 +38,11 @@ function FormLogin({ onShowToastify }) {
         const res = await APIServer.admin.postLoginAdmin(values);
 
         if (res.status === 200) {
-          const { message, accessToken, isLoggedIn } = res.data;
+          const { message, accessToken, isLoggedIn, role } = res.data;
 
           alert(message);
           //  Update state: User
-          dispatch(actionUser.save({ accessToken, isLoggedIn }));
+          dispatch(actionUser.save({ accessToken, isLoggedIn, role }));
           navigate("/dashboard");
           return false;
         }

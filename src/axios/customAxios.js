@@ -1,7 +1,7 @@
 // Import Modules
 import axios from "axios";
-// import store from "../redux/store";
-// import { actionUser } from "../redux/actionRedux";
+import store from "../redux/store";
+import { actionUser } from "../redux/actionRedux";
 import { API_ROOT } from "../utils/constants";
 
 const axiosIntance = axios.create({
@@ -9,6 +9,7 @@ const axiosIntance = axios.create({
   proxy: 1,
   withCredentials: true,
   headers: {
+    // "Content-Type": "multipart/form-data",
     "Content-Type": "application/json",
   },
 });
@@ -17,12 +18,12 @@ const axiosIntance = axios.create({
 axiosIntance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    // const { isLoggedIn, accessToken } = store.getState().user;
+    const { isLoggedIn, accessToken } = store.getState().user;
 
     // // // Check user logged then add accessToken in header request
-    // if (isLoggedIn) {
-    //   config.headers["Authorization"] = `Bearer ${accessToken}`;
-    // }
+    if (isLoggedIn) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
+    }
 
     return config;
   },
@@ -36,13 +37,13 @@ axiosIntance.interceptors.request.use(
 axiosIntance.interceptors.response.use(
   function (response) {
     // Check if a new access token is provided in the headers
-    // const newAccessToken = response.headers["x-access-token"];
+    const newAccessToken = response.headers["x-access-token"];
 
-    // if (newAccessToken) {
-    //   store.dispatch(
-    //     actionUser.updateAccessToken({ accessToken: newAccessToken })
-    //   );
-    // }
+    if (newAccessToken) {
+      store.dispatch(
+        actionUser.updateAccessToken({ accessToken: newAccessToken })
+      );
+    }
 
     return response;
   },

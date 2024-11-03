@@ -1,0 +1,63 @@
+.footer-container {
+    margin: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(221, 216, 216, .4);
+}
+
+/* CSS: Footer Row */
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 5px 20px;
+}
+
+/* CSS: Footer Col Left*/
+.footer-col-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.footer-col-left .logo-name,
+.footer-col-left .logo-name>span {
+    font: 600 1.8rem/2.0rem"Bodoni Moda", serif;
+    color: rgb(43, 64, 86);
+}
+
+.footer-col-left .logo-name>span {
+    color: #fff;
+    background-color: rgb(43, 64, 86);
+    padding: 2px 5px;
+    margin-right: 2px;
+}
+
+.bread-crum-link {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.bread-crum-link>li {
+    font: 500 1.4rem/2.0rem"Bodoni Moda", serif;
+    letter-spacing: .4px;
+    color: rgb(50, 50, 50);
+    border-bottom: 2px solid transparent;
+    transition: .5s all ease;
+}
+
+/* CSS: Footer Col Right */
+.footer-col-right>p {
+    font: 500 1.6rem/2.0rem"Bodoni Moda", serif;
+    letter-spacing: .4px;
+    color: rgb(50, 50, 50);
+}
+
+/* CSS: Effects */
+.bread-crum-link>li:hover {
+    color: rgb(43, 64, 86);
+    border-color: rgb(43, 64, 86);
+}

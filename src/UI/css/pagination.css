@@ -1,0 +1,53 @@
+.pagination-products {
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.pagination-products .ant-pagination-prev,
+.pagination-products .ant-pagination-next {
+    background-color: rgba(225, 230, 236, .7);
+    border-radius: 3px;
+    transition: all .5s ease;
+}
+
+.pagination-products .ant-pagination-prev .anticon-left,
+.pagination-products .ant-pagination-next .anticon-right {
+    color: #3e3d3d;
+    font-size: 1.0rem;
+}
+
+.pagination-products .ant-pagination-item {
+    border-radius: 3px;
+}
+
+.pagination-products .ant-pagination-item-active {
+    background-color: rgba(186, 187, 187, 0.7);
+    border: none;
+    transition: all .5s ease;
+}
+
+.pagination-products .ant-pagination-item-active>a {
+    color: #fff;
+}
+
+.pagination-products .ant-pagination-item>a {
+    font: 500 1.2rem/3.2rem "Roboto", sans-serif;
+}
+
+/* CSS Effects */
+.pagination-products .ant-pagination-prev:hover,
+.pagination-products .ant-pagination-next:hover,
+.pagination-products .ant-pagination-item-active:hover {
+    background-color: #2e4257;
+    border: 1px solid transparent;
+}
+
+.pagination-products .ant-pagination-prev:hover .anticon-left,
+.pagination-products .ant-pagination-next:hover .anticon-right {
+    color: #fff;
+    font-size: 1.0rem;
+}
+
+.pagination-products .ant-pagination-item-active>a:hover {
+    color: #fff;
+}

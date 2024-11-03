@@ -1,0 +1,83 @@
+.admins-setting-setting {
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+/* CSS: admins Container */
+.admins-setting-container {
+    padding: 10px 20px;
+}
+
+/* CSS: admins Headers */
+.admins-setting-header-message>h3 {
+    font: 600 1.8rem/2.2rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, .7);
+    letter-spacing: .4px;
+}
+
+.form-search {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.form-search>input {
+    width: 300px;
+    font: 500 1.4rem/2.2rem "Roboto", sans-serif;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.form-search>input::placeholder {
+    font: 500 1.4rem/2.2rem "Roboto", sans-serif;
+    color: rgba(184, 182, 182, 1);
+}
+
+.form-search .message-pending-search {
+    font: 500 1.4rem/2.2rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+}
+
+/* CSS: admins Section */
+.admins-setting-section {
+    margin: 20px 0;
+}
+
+.admins-setting-title {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid rgba(216, 231, 236, 0.7);
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+    background-color: #fff;
+}
+
+.admins-setting-title .bg-title {
+    height: 30px;
+    flex: 1;
+    padding: 10px 15px;
+    border-right: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.admins-setting-title .bg-title:first-child {
+    border-left: 1px solid rgba(216, 231, 236, 0.7);
+}
+
+.admins-setting-title .bg-title.id {
+    flex: 1.5;
+}
+
+.admins-setting-title .bg-title.role,
+.admins-setting-title .bg-title.phone,
+.admins-setting-title .bg-title.state,
+.admins-setting-title .bg-title.edit {
+    flex: .7;
+}
+
+.admins-setting-title .bg-title>h4 {
+    font: 500 1.4rem/3.0rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, 1);
+}

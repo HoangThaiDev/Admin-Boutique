@@ -1,6 +1,7 @@
 .nav {
     width: 100%;
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
 }
@@ -8,7 +9,7 @@
 /* CSS: Nav Container */
 .nav-container {
     padding: 0 20px;
-    background-color: red;
+    background-color: #fff;
 }
 
 /* CSS: Nav Row */
@@ -27,6 +28,7 @@
 
 /* CSS: Nav Col Left */
 .nav-logo {
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -82,7 +84,6 @@
 
 .menu-user-dropdown {
     position: absolute;
-    z-index: 2;
     left: -130px;
     bottom: -180px;
     width: 160px;
@@ -95,11 +96,6 @@
     visibility: hidden;
     opacity: 0;
     transition: all .5s ease;
-}
-
-.menu-user-dropdown.active {
-    visibility: initial;
-    opacity: 1;
 }
 
 .menu-user-dropdown::after {
@@ -144,22 +140,7 @@
 .icon {
     cursor: pointer;
     font-size: 2.4rem;
-}
-
-.icon-menu {
     color: rgb(95, 95, 95);
-}
-
-.icon-search {
-    color: #3D9FFF;
-}
-
-.icon-setting {
-    color: #A9A9A9;
-}
-
-.icon-noti {
-    color: #D32F2F;
 }
 
 .icon-menu-dropdown {
@@ -168,6 +149,11 @@
 }
 
 /* CSS: Active */
+.menu-user-dropdown.active {
+    visibility: initial;
+    opacity: 1;
+    z-index: 2;
+}
 
 /* CSS: Effects */
 .menu-user-dropdown>li:hover {
