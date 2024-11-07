@@ -73,7 +73,7 @@ export default function Layout({ admins: adminsAPI }) {
     <div className={classes["admins-setting"]}>
       <div className={classes["admins-setting-container"]}>
         <div className={classes["admins-setting-header-message"]}>
-          <h3>Admin / Permission</h3>
+          <h3>Admin / Setting Accounts</h3>
 
           <div className={classes["form-search"]}>
             <input

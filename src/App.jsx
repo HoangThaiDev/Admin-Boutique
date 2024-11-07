@@ -4,6 +4,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import APIServer from "./API/customAPI";
 import { actionUser } from "./redux/actionRedux";
+import BoxChat from "./page/BoxChat";
 
 // Import Components
 // ------------ Layout --------------
@@ -37,7 +38,7 @@ function App() {
     const fetchUser = async () => {
       try {
         const res = await APIServer.admin.getAdmin();
-        const { isLoggedIn, accessToken } = res.data;
+        const { isLoggedIn, accessToken, role } = res.data;
 
         // If client not logged in => Back to page login
         if (res.status === 200 && !isLoggedIn) return navigate("..");
@@ -48,6 +49,7 @@ function App() {
             actionUser.save({
               accessToken: accessToken,
               isLoggedIn: isLoggedIn,
+              role: role,
             })
           );
         }
@@ -99,6 +101,7 @@ function App() {
           <Route path="/admin" element={<RootLayout />}>
             <Route path="permission" element={<Permission />} />
             <Route path="setting-accounts" element={<SettingAccount />} />
+            <Route path="box-chat" element={<BoxChat />} />
           </Route>
         </Routes>
       </Suspense>

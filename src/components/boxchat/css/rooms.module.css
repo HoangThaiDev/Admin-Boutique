@@ -1,0 +1,62 @@
+.rooms {
+    width: 100%;
+}
+
+.form-search {
+    padding: 20px;
+}
+
+.form-search>input {
+    font: 500 1.3rem/1.4rem "Roboto", sans-serif;
+    border: 1px solid rgba(216, 231, 236, 0.7);
+    padding: 6px 10px;
+    box-sizing: border-box;
+    transition: all .5s ease;
+}
+
+.form-search>input::placeholder {
+    font: 500 1.3rem/1.4rem "Roboto", sans-serif;
+    color: rgb(179, 178, 178);
+}
+
+.rooms_list {
+    border-top: 1px solid rgba(216, 231, 236, 0.7);
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+.room {
+    position: relative;
+    border-bottom: 1px solid rgba(216, 231, 236, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    padding: 5px 20px 14.5px;
+}
+
+.room-client-id {
+    font: 500 1.4rem/1.8rem "Roboto", sans-serif;
+    color: rgb(81, 81, 81);
+    flex: 1;
+    word-break: break-all;
+}
+
+.room-client-avatar {
+    font-size: 2.4rem;
+    color: rgb(137, 136, 136);
+}
+
+/* CSS: Active */
+.room-full {
+    border-left: 5px solid rgb(85, 186, 137);
+}
+
+/* CSS: Effects */
+.form-search>input:focus {
+    outline: none;
+    border-color: rgb(81, 81, 81);
+}

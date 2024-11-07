@@ -1,0 +1,90 @@
+.form-chat {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 72vh;
+}
+
+.form-chat-section {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 10px 0;
+}
+
+.media-chat-admin {
+    display: block;
+    text-align: right;
+}
+
+.message-admin {
+    background-color: #D9F4F5;
+    display: inline-flex;
+    gap: 0 5px;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+.message-admin>span {
+    font: 500 1.3rem/ 1.6rem "Roboto", sans-serif;
+    color: rgb(109, 109, 109);
+}
+
+.media-chat-client {
+    display: block;
+}
+
+.message-client {
+    background-color: #EEF5FF;
+    display: inline-flex;
+    gap: 0 5px;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+.message-client>span {
+    font: 500 1.3rem/ 1.6rem "Roboto", sans-serif;
+    color: #494747;
+    letter-spacing: .4px;
+}
+
+/* CSS: Box Chat Footer */
+.form-chat-footer {
+    padding: 0 20px;
+    border-top: 1px solid rgba(159, 158, 158, .4);
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.form-chat-footer>input {
+    font: 500 1.3rem/ 1.6rem "Roboto", sans-serif;
+    flex: 1;
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 1px solid rgba(159, 158, 158, .4);
+    border-radius: 3px;
+}
+
+
+.form-chat-footer .icon-send-text {
+    cursor: pointer;
+    font-size: 2.0rem;
+    color: #35aad4;
+}
+
+/* CSS: Effects */
+.form-chat-footer>input:focus {
+    outline: none;
+}
+
+.form-chat-section::-webkit-scrollbar {
+    background-color: #fff;
+    width: 10px;
+}

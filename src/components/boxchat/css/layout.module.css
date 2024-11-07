@@ -1,0 +1,40 @@
+.box-chat {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* CSS: Box Chat Container */
+.box-chat-container {
+    padding: 10px 20px;
+}
+
+.box-chat-container>h3 {
+    font: 600 1.8rem/2.2rem "Roboto", sans-serif;
+    color: rgba(98, 97, 97, .7);
+    letter-spacing: .4px;
+}
+
+.box-chat-row {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 75vh;
+    border-radius: 5px;
+    border: 1px solid rgba(216, 231, 236, 0.7);
+    box-shadow: 0 0 20px 1px rgba(209, 200, 200, 0.4);
+}
+
+.box-chat-col {
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.box-chat-rooms {
+    border-right: 1px solid rgba(216, 231, 236, 0.7);
+    width: 20%;
+}
+
+.box-chat-form-chat {
+    width: 80%;
+}

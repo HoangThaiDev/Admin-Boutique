@@ -65,6 +65,25 @@ const APIServer = {
       return axiosIntance.delete(`admin/delete/${adminId}`);
     },
   },
+  chatRoom: {
+    getRooms: () => {
+      return axiosIntance.get("chatRoom/rooms");
+    },
+    joinRoom: (roomID, accessToken) => {
+      return axiosIntance.post(`chatRoom/join/${roomID}`, { accessToken });
+    },
+  },
+  message: {
+    send: (roomID, valueMessage) => {
+      return axiosIntance.post(`message/send/${roomID}`, {
+        sender: "admin",
+        valueMessage,
+      });
+    },
+    get: (roomID) => {
+      return axiosIntance.get(`message/get/${roomID}`);
+    },
+  },
 };
 
 export default APIServer;

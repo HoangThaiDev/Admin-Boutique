@@ -43,6 +43,7 @@ const items = [
       <BsDot className="icon-dot" />,
       null
     ),
+    getItem("Live Chat", "box-chat", <BsDot className="icon-dot" />, null),
   ]),
 ];
 
@@ -57,7 +58,7 @@ export default function Sidebar() {
   const choosePageHandle = (e) => {
     const pageValue = e.key;
     const pathsOfDashboard = ["orders", "products"];
-    const pathsOfAdmin = ["permission", "setting-accounts"];
+    const pathsOfAdmin = ["permission", "setting-accounts", "box-chat"];
 
     if (pageValue === "home") {
       return navigate("../dashboard");
