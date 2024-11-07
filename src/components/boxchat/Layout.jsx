@@ -71,11 +71,14 @@ export default function Layout() {
 
   socket.on("Server:clientSendMessage", (messages) => {
     const roomID = localStorage.getItem("room_current_id");
-    setMessages((prevState) => ({
-      ...prevState,
-      roomID: roomID,
-      value: messages,
-    }));
+
+    if (roomID) {
+      setMessages((prevState) => ({
+        ...prevState,
+        roomID: roomID,
+        value: messages,
+      }));
+    }
   });
 
   socket.on("Server:clientEndChat", (data) => {
@@ -90,16 +93,18 @@ export default function Layout() {
   });
 
   socket.on("Server:adminJoinRoom", (data) => {
-    const { messages: messageID, rooms } = data;
+    const { messages: messageID, rooms, adminID } = data;
 
-    // Update States
-    setRooms(rooms);
-    setMessages((prevState) => ({
-      ...prevState,
-      roomID: messageID.chatRoomId,
-      value: messageID.messages,
-    }));
-    localStorage.setItem("room_current_id", messageID.chatRoomId);
+    if (user.accessToken === adminID) {
+      localStorage.setItem("room_current_id", messageID.chatRoomId);
+      // Update States
+      setRooms(rooms);
+      setMessages((prevState) => ({
+        ...prevState,
+        roomID: messageID.chatRoomId,
+        value: messageID.messages,
+      }));
+    }
   });
 
   // Create + use event Handles

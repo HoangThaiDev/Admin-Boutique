@@ -9,8 +9,6 @@ import classes from "./css/rooms.module.css";
 import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Rooms({ user, rooms }) {
-  console.log(rooms);
-
   // Create + use events
   const joinRoomHandle = async (room) => {
     const isPermission =

@@ -15,7 +15,11 @@ export default function FormChat({ messages, onGetSendMessage }) {
   // Create + use event handles
   const sendMessageHandle = async () => {
     const valueMessage = messageClientRef.current.value;
+    const roomJoined = localStorage.getItem("room_current_id") || null;
     if (valueMessage.length === 0) return false;
+
+    if (valueMessage.length !== 0 && !roomJoined)
+      return alert("You need join one room to chat!");
 
     try {
       const res = await APIServer.message.send(messages.roomID, valueMessage);
