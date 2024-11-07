@@ -2,7 +2,7 @@
 import React from "react";
 
 // Import Components
-import Header from "../components/dashboard/header";
+import Header from "../components/dashboard/Header";
 
 export default function Dashboard() {
   return (
