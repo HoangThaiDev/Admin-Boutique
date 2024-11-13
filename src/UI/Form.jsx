@@ -190,6 +190,7 @@ export default function Form({ mode, productDetail, isShow }) {
 
     // Convert to FormData
     const formData = new FormData();
+
     formData.append("id", productDetail._id);
     formData.append("name", valueProduct.name);
     formData.append("category", valueProduct.category);
